@@ -1,0 +1,10 @@
+<h1>All Families</h1>
+
+<div>
+  <% @families.each do |family| %>
+    <h2><%= family.name %></h2>
+    <p><%= family.description %></p>
+    <p><%= "For #{family.capacity} people max" %></p>
+    <p><%= "#{family.price_pppn}€/day/person" %></p>
+  <% end %>
+</div>

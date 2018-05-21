@@ -5,7 +5,7 @@ class CreateFamilies < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :capacity
       t.float :price_pppn
-      t.references :users
+      t.references :user
 
       t.timestamps
     end
