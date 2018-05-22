@@ -1,16 +1,18 @@
+
 <div class="container">
   <h2>Search results</h2>
   <% @families.each do |family| %>
     <div class="card">
-      <div class = card-image>
+      <div class="card-image">
+        <%= link_to "", family_path(family) %>
       </div>
       <div class="card-name">
-      <h3><%= family.name %></h3>
-      <%= link_to "find out more", family_path(family), class: 'card-link' %>
+        <h3><%= family.name %></h3>
+          <p><%= link_to "find out more", family_path(family), class: 'card-link' %></p>
       </div>
       <div class="card-description">
-      <p><strong>Capacity:</strong> <%= "#{family.capacity} persons" %></p>
-      <p><strong>Price:</strong> <%= "EUR #{family.price_pppn}/person/night" %></p>
+        <p> Up to <strong><%= "#{family.capacity} guests" %></strong></p>
+        <p>Price per day: <strong><%= "#{family.price_pppn}€ per guest"%></strong></p>
       </div>
     </div>
   <% end %>
