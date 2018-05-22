@@ -52,4 +52,12 @@ class FamiliesController < ApplicationController
   def family_params
     params.require(:family).permit(:name, :description, :capacity, :price_pppn)
   end
+
+  def search_form
+    @family = Family.new
+  end
+
+  def search
+    raise
+  end
 end
