@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :families, only: [:show]
-  get "/families?capacity=[:capacity]&price=[:price_pppn]", to: "families#index"
+  get "/families", to: "families#index"
+
 end

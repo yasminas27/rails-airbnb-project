@@ -1,10 +1,20 @@
-<h1>All Families</h1>
-
-<div>
-  <% @families.each do |family| %>
-    <h2><%= family.name %></h2>
-    <p><%= family.description %></p>
-    <p><%= "For #{family.capacity} people max" %></p>
-    <p><%= "#{family.price_pppn}€/day/person" %></p>
-  <% end %>
+<div class="container">
+  <h1>All Families</h1>
+  <ul class="list-unstyled">
+    <% @families.each do |family| %>
+      <div class="card">
+        <li>
+          <div class="card-name">
+          <h3><%= family.name %></h3>
+          <%= link_to "find out more", family_path(family), class: 'card-link' %>
+          </div>
+          <div class="card-description">
+          <%= "Capacity: #{family.capacity} persons" %>
+          <%= "Price: EUR #{family.price_pppn}/person/night" %>
+          </div>
+        </li>
+      </div>
+    <% end %>
+  </ul>
 </div>
+
