@@ -3,7 +3,10 @@ class FamiliesController < ApplicationController
 
   def index
     # TO DO: modify to only display search results
-    price_pppn = params[:price]to_i/params[:night].to_i/params[:capacity].to_i
+    # Uncomment below to test the view/families/index.html.erb
+    # @families = Family.all
+
+    price_pppn = ((params[:price]to_i) / params[:night].to_i) / params[:capacity].to_i
     @families = Family.where(price_pppn: =< price_pppn, capacity: params[:capacity])
   end
 
