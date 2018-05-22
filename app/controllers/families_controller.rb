@@ -1,6 +1,7 @@
 class FamiliesController < ApplicationController
 
   def index
+    # TO DO: modify to only display search results
     @families = Family.all
   end
 
