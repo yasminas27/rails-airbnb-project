@@ -5,4 +5,10 @@
   <p><%= "#{@family.price_pppn}€/day/person" %></p>
 </div>
 
+<% if policy(@family).edit? %>
+  <%= link_to "Edit", edit_family_path(@family) %>
+<% end %>
 
+<% if policy(@family).destroy? %>
+  <%= link_to "Delete", family_path(@family), method: :delete, data: { confirm: "Are you sure you want to delete this family?" } %>
+<% end %>
