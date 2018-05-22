@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Update <%= @family.name %> Family</h1>
+  <%= simple_form_for(@family) do |f| %>
+    <% if @family.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @family.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+         </ul>
+      </div>
+    <% end %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :capacity %>
+    <%= f.input :price_pppn %>
+    <%= f.submit "Update family", class: "btn btn-primary" %>
+  <% end %>
+</div>
