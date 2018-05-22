@@ -2,9 +2,13 @@
 
 <div>
   <% @families.each do |family| %>
-    <h2><%= family.name %></h2>
+    <h2><%= link_to family.name, family_path(family) %></h2>
     <p><%= family.description %></p>
     <p><%= "For #{family.capacity} people max" %></p>
     <p><%= "#{family.price_pppn}€/day/person" %></p>
   <% end %>
 </div>
+
+<% if policy(Family).new? %>
+  <%= link_to "Create a family", new_family_path %>
+<% end %>
