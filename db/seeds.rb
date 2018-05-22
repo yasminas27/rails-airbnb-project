@@ -47,10 +47,21 @@ families = [
     price_pppn: 10000
   }
   ]
+photos = ["", "", "", "", "", ""]
+
+photos.each do |url|
   families.each do |family|
     fam = Family.new(family)
     fam.user = user
+    fam.remote_photo_url = url
     fam.save!
   end
+end
 
+
+  # families.each do |family|
+  #   fam = Family.new(family)
+  #   fam.user = user
+  #   fam.save!
+  # end
 puts "Finished!"
