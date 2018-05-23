@@ -5,5 +5,4 @@ class Family < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   attr_accessor :price, :night
-
 end
