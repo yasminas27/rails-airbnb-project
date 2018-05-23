@@ -1,7 +1,7 @@
 import Typed from 'typed.js';
 
 function reloadBannerImage() {
-  window.setInterval(changeImage, 10000);
+  window.setInterval(changeImage, 8000);
 }
 
 function changeImage() {
@@ -27,7 +27,7 @@ function changeImage() {
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["No family to spent your holidays", "Search for one below"],
+    strings: ["No family to spend your holidays with ?", "Find one below"],
     typeSpeed: 50,
     loop: true
   });
