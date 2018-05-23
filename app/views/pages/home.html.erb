@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" data-images="<%= image_url 'banner-1.jpg' %>,<%= image_url 'banner-2.jpg' %>,<%= image_url 'banner-3.jpg' %>">
+  <div class="banner-content">
+    <h1>We are Familive</h1>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <%= render 'families/search_form' %>
+    </div>
+  </div>
+</div>
+
+

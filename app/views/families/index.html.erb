@@ -1,4 +1,3 @@
-
 <div class="container">
   <h2>Search results</h2>
   <% @families.each do |family| %>
@@ -17,4 +16,8 @@
     </div>
   <% end %>
 </div>
+
+<% if policy(Family).new? %>
+  <%= link_to "Create a family", new_family_path %>
+<% end %>
 
