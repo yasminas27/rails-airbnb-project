@@ -44,6 +44,7 @@ class FamiliesController < ApplicationController
     redirect_to root_path
   end
 
+
   private
 
   def set_family
@@ -52,7 +53,7 @@ class FamiliesController < ApplicationController
   end
 
   def family_params
-    params.require(:family).permit(:name, :description, :capacity, :price_pppn)
+    params.require(:family).permit(:name, :description, :capacity, :price_pppn, :photo)
   end
 
 end
