@@ -43,10 +43,6 @@ class FamiliesController < ApplicationController
     @family.destroy
     redirect_to root_path
   end
-  
-  def search_form
-    @family = Family.new
-  end
 
   private
 
