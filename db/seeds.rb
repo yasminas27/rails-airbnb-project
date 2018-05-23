@@ -8,6 +8,8 @@
 puts "Creating families..."
 
 User.destroy_all
+Family.destroy_all
+
 user = User.create(first_name: "A", last_name: "Y", email: "a@hotmail.fr", password: "1234")
 families = [
   {
@@ -47,21 +49,14 @@ families = [
     price_pppn: 10000
   }
   ]
-photos = ["", "", "", "", "", ""]
 
-photos.each do |url|
-  families.each do |family|
-    fam = Family.new(family)
-    fam.user = user
-    # fam.remote_photo_url = url
-    fam.save!
-  end
+urls = ["", "", "", "", "", ""]
+
+families.each_with_index do |family, index|
+  fam = Family.new(family)
+  fam.user = user
+  fam.remote_photo_url = urls[index]
+  fam.save!
 end
 
-
-  # families.each do |family|
-  #   fam = Family.new(family)
-  #   fam.user = user
-  #   fam.save!
-  # end
 puts "Finished!"
