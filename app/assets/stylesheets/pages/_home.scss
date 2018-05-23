@@ -1,1 +1,93 @@
 // Specific CSS for your home-page
+.input {
+  font-size: 20px;
+  border-radius: 5px;
+  color: #1d6168;
+  padding: 4px;
+}
+
+form {
+  padding-top: 60px;
+}
+
+.section-title-home {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  border-bottom: 1px solid #E0E0E0;
+  height: 7px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2em 40px 1em 40px;
+  z-index: 1;
+}
+
+.section-title-home-content {
+  background-color: #F4F4F4;
+  position: relative;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.reviews {
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.dead-links {
+  background-image: cover;
+  flex-item: 0 0 auto;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.row {
+  text-align: center;
+  padding-top: 35px;
+}
+
+.left {
+  flex-item: 00 auto;
+  padding: 10px;
+}
+
+.right {
+  flex-item: 00 auto;
+  padding: 10px;
+}
+
+.content {
+  text-align: justify;
+  padding-top: 70px;
+ }
+
+.fa-tree {
+  color: #B4DC7F;
+}
+.fa-plane {
+  color: $blue;
+}
+
+.fa-gift {
+  color: $orange;
+}
+
+.fa-wine-glass {
+  color: $red;
+}
+
+.fas {
+  padding: 10px;
+}
