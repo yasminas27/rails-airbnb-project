@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Creating families..."
 
-User.destroy_all
 Family.destroy_all
+User.destroy_all
 user = User.create(first_name: "A", last_name: "Y", email: "a@hotmail.fr", password: "1234")
 families = [
   {
@@ -58,8 +58,8 @@ families = [
     price_pppn: 2000
   }
   ]
-  # http://res.cloudinary.com/dikxqpy9w/image/upload/v1527071504/pjaktpdm6ie9gjexdq4a.jpg
-cohens_url = ""
+
+cohens_url = "http://res.cloudinary.com/dikxqpy9w/image/upload/v1527071504/pjaktpdm6ie9gjexdq4a.jpg"
 simpsons_url = "https://img00.deviantart.net/68c1/i/2010/269/c/2/full_simpson_family_by_tomsimpson96-d2zi35b.jpg"
 malcolm_url = "https://consequenceofsound.files.wordpress.com/2016/12/screen-shot-2016-12-18-at-4-16-07-pm.png"
 addams_url = "http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/addams-family-poster.jpeg?itok=sokBQWAf&resize=1100x619"

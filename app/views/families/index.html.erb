@@ -3,7 +3,7 @@
   <% @families.each do |family| %>
     <div class="card">
       <div class="card-image">
-        <%= cl_image_tag @family.photo %>
+        <%= cl_image_tag family.photo, height: 200, width: 250 %>
         <%= link_to "", family_path(family) %>
       </div>
       <div class="card-name">

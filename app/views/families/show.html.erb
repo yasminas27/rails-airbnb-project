@@ -1,6 +1,7 @@
-<div>
+
+<div class="container">
   <h2><%= @family.name %></h2>
-  <%= cl_image_tag @family.photo %>
+  <%= cl_image_tag @family.photo, height: 400, width: 500  %>
   <p><%= @family.description %></p>
   <p><%= "For #{@family.capacity} people max" %></p>
   <p><%= "#{@family.price_pppn}€/day/person" %></p>
