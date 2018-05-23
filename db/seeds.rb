@@ -53,7 +53,7 @@ photos.each do |url|
   families.each do |family|
     fam = Family.new(family)
     fam.user = user
-    fam.remote_photo_url = url
+    # fam.remote_photo_url = url
     fam.save!
   end
 end

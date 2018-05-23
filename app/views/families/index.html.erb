@@ -1,10 +1,23 @@
-<h1>All Families</h1>
-
-<div>
+<div class="container">
+  <h2>Search results</h2>
   <% @families.each do |family| %>
-    <h2><%= family.name %></h2>
-    <p><%= family.description %></p>
-    <p><%= "For #{family.capacity} people max" %></p>
-    <p><%= "#{family.price_pppn}€/day/person" %></p>
+    <div class="card">
+      <div class="card-image">
+        <%= link_to "", family_path(family) %>
+      </div>
+      <div class="card-name">
+        <h3><%= family.name %></h3>
+          <p><%= link_to "find out more", family_path(family), class: 'card-link' %></p>
+      </div>
+      <div class="card-description">
+        <p> Up to <strong><%= "#{family.capacity} guests" %></strong></p>
+        <p>Price per day: <strong><%= "#{family.price_pppn}€ per guest"%></strong></p>
+      </div>
+    </div>
   <% end %>
 </div>
+
+<% if policy(Family).new? %>
+  <%= link_to "Create a family", new_family_path %>
+<% end %>
+

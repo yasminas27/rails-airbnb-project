@@ -1,0 +1,6 @@
+<%= simple_form_for(Family.new, url: :families, method: :get, html: { class: 'form-inline' }) do |f| %>
+  <%= f.input :price, placeholder: "$ Price", label: false %>
+  <%= f.input :capacity, placeholder: "How many people?", label: false %>
+  <%= f.input :night, label: false, placeholder: "How many nights?" %>
+  <%= f.submit class:'btn btn-success', value: "Search" %>
+<% end %>
