@@ -5,22 +5,64 @@
       <span id="banner-typed-text"></span>
     </p>
     <div class="container">
-      <br>
-      <br>
-      <br>
-    <!--   <%= simple_form_for(Family.new, url: :families, method: :get, html: { class: 'form-inline' }) do |f| %>
-        <%= f.input :price, placeholder: "$ Price", label: false %>
-        <%= f.input :capacity, placeholder: "How many people?", label: false %>
-        <%= f.input :night, label: false, placeholder: "How many nights?" %>
-        <%= f.submit class:'btn btn-success', value: "Search" %>
-      <% end %> -->
       <%= form_tag("/families", method: "get", class: 'form-inline') do %>
         <%= text_field_tag :price, nil, placeholder: '$ Price', class:'input' %>
         <%= text_field_tag :capacity, nil, placeholder: 'How many people?', class:'input' %>
-        <%= text_field_tag :price, nil, placeholder: 'How many nights?', class:'input' %>
+        <%= text_field_tag :night, nil, placeholder: 'How many nights?', class:'input' %>
         <%= submit_tag "Search", class:'btn btn-success' %>
       <% end %>
     </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class="section-title-home">
+    <div class="section-title-home-content" style="font-size:30px;">
+      Find <i>the perfect family</i>
+    </div>
+  </h2>
+  <div class="container us">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="content">
+          <h4>Who said you can't <strong>choose your family?</strong></h4>
+          <p>Here @Familive, we think that no one should spend Christmas (or any other special occasion) alone. That's why, thanks to us, you can rent a family for you to have some company during those times.</p>
+          <div class="list">
+            <ul class="list-unstyled left">
+              <li><i class="fas fa-tree"></i><span> Christmas</span></li>
+              <li><i class="fas fa-gift"></i><span> Birthdays</span></li>
+            </ul>
+            <ul class="list-unstyled right">
+              <li><i class="fas fa-wine-glass"></i><span> Parties</span></li>
+              <li><i class="fas fa-plane"></i><span> Holidays</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="photo">
+          <%= image_tag 'christmas_tree' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <h2 class="section-title-home">
+    <div class="section-title-home-content" style="font-size:30px;">
+      They talk <i>about us</i>
+    </div>
+  </h2>
+  <div class="reviews">
+    <a href="#" class="dead-links">
+     <%= image_tag 'techcrunch' %>
+    </a>
+    <a href="#" class="dead-links">
+      <%= image_tag 'Le_Monde' %>
+    </a>
+    <a href="#" class="dead-links">
+      <%= image_tag 'Logo_Challenges' %>
+    </a>
   </div>
 </div>
 
