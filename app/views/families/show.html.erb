@@ -1,5 +1,6 @@
 <div>
   <h2><%= @family.name %></h2>
+  <%= cl_image_tag @family.photo %>
   <p><%= @family.description %></p>
   <p><%= "For #{@family.capacity} people max" %></p>
   <p><%= "#{@family.price_pppn}€/day/person" %></p>

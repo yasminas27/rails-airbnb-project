@@ -8,60 +8,69 @@
 puts "Creating families..."
 
 User.destroy_all
+Family.destroy_all
 user = User.create(first_name: "A", last_name: "Y", email: "a@hotmail.fr", password: "1234")
 families = [
   {
-    name: "Cohens",
-    description: "Blabla",
-    capacity: 4,
-    price_pppn: 130
+    name: "The Cohens",
+    description: "We use a red phone like the president of the united states, yes we are that cool.
+  I am an ophthalmologist, my husband is a General Praticien, you are safe with us.
+  We are happy to welcome you for Shabbat every friday nights I’ll make the best couscous in the world (according to my son Pierre).
+  We can host 2 guests for 80 euros per person.",
+    capacity: 2,
+    price_pppn: 80
   },
   {
     name: "Simpsons",
-    description: "We are yellow people",
-    capacity: 4,
-    price_pppn: 12
+    description: "We are Homer, Marge, Bart, Lisa and Maggie.
+    Family dinner with us is more than cool. We only eat donuts and watch TV.
+    2 persons can join us for dinner! We will only charge you 10€ per person (please note that access to the TV remote is not included).",
+    capacity: 2,
+    price_pppn: 10
   },
   {
     name: "Malcolm's family",
     description: "We have 2 genius kids and a dumb one. But we are nice. Come and have some fun.",
-    capacity: 2,
-    price_pppn: 70
+    capacity: 3,
+    price_pppn: 50
   },
   {
     name: "Addams",
-    description: "Family of weirdos. Come shake the Thing's hand",
-    capacity: 4,
-    price_pppn: 130
+    description: "Are you creepy? Family of weirdos. Come shake the Thing's hand. We can host 2 lonely souls to stay with us. We provide dinner and accomodation for 150€ per person.",
+    capacity: 2,
+    price_pppn: 150
   },
   {
-    name: "Kardashians",
-    description: "Famous thanks to a beautiful sextape. Come have some fun making one of your own. Leisures: Spending a lot of money, plastic surgery, sunbathing.",
-    capacity: 16,
+    name: "The Kardashians",
+    description: "We are the most fucked up family in the world. Your dinner with us will end up on every social media you may know.
+  We love sharing point of views on make up, sex tapes and expensive things.
+  Nobody cooks at home, we only eat protein bars.
+  We can have up to 30 guests, the price is 1 300€ a night. ",
+    capacity: 30,
     price_pppn: 1300
   },
   {
     name: "Windsors",
-    description: "Come celebrate Meghan and Harry's wedding with us. We have a great place called Buckingham Palace.",
-    capacity: 100,
-    price_pppn: 10000
+    description: "We are probably the most famous family in the world, join us for a 17 courses traditional royal dinner.
+    Our grandmother is kind of not kidding with table etiquette. We live in a great place called Buckingham Palace and can host up to 600 people.
+    Come celebrate Meghan and Harry's wedding with us! ",
+    capacity: 600,
+    price_pppn: 2000
   }
   ]
-photos = ["", "", "", "", "", ""]
+cohens_url = "http://res.cloudinary.com/dikxqpy9w/image/upload/v1527071504/pjaktpdm6ie9gjexdq4a.jpg"
+simpsons_url = "https://img00.deviantart.net/68c1/i/2010/269/c/2/full_simpson_family_by_tomsimpson96-d2zi35b.jpg"
+malcolm_url = "https://consequenceofsound.files.wordpress.com/2016/12/screen-shot-2016-12-18-at-4-16-07-pm.png"
+addams_url = "http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/addams-family-poster.jpeg?itok=sokBQWAf&resize=1100x619"
+kardashians_url = "https://timenewsfeed.files.wordpress.com/2010/12/gallery_enlarged-khloe-kardashian-family-christmas-card-2010-1215100.jpg?w=720&h=480&crop=1"
+windsors_url = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hbz-prince-harry-meghan-markle-wedding-portrait2-1526914591.jpg?crop=1xw:1xh;center,top&resize=768:*"
+urls = [cohens_url, simpsons_url , malcolm_url, addams_url, kardashians_url, windsors_url]
 
-photos.each do |url|
-  families.each do |family|
-    fam = Family.new(family)
-    fam.user = user
-    # fam.remote_photo_url = url
-    fam.save!
-  end
+families.each_with_index do |family, index|
+  fam = Family.new(family)
+  fam.user = user
+  fam.remote_photo_url = urls[index]
+  fam.save!
 end
 
-
-  # families.each do |family|
-  #   fam = Family.new(family)
-  #   fam.user = user
-  #   fam.save!
-  # end
 puts "Finished!"

@@ -9,12 +9,9 @@ gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
 gem 'devise'
-<<<<<<< HEAD
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-=======
 gem 'pundit'
->>>>>>> master
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
