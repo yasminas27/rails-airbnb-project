@@ -59,11 +59,11 @@ families = [
   }
   ]
 
-cohens_url = "http://res.cloudinary.com/dikxqpy9w/image/upload/v1527071504/pjaktpdm6ie9gjexdq4a.jpg"
+cohens_url = "http://imagizer.imageshack.us/a/img922/4376/FQClhc.jpg"
 simpsons_url = "https://img00.deviantart.net/68c1/i/2010/269/c/2/full_simpson_family_by_tomsimpson96-d2zi35b.jpg"
 malcolm_url = "https://consequenceofsound.files.wordpress.com/2016/12/screen-shot-2016-12-18-at-4-16-07-pm.png"
 addams_url = "http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/addams-family-poster.jpeg?itok=sokBQWAf&resize=1100x619"
-kardashians_url = "https://timenewsfeed.files.wordpress.com/2010/12/gallery_enlarged-khloe-kardashian-family-christmas-card-2010-1215100.jpg?w=720&h=480&crop=1"
+kardashians_url = "https://akns-images.eonline.com/eol_images/Entire_Site/2017815/rs_1024x575-170915114530-back4.jpg?fit=inside|900:auto&output-quality=90"
 windsors_url = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hbz-prince-harry-meghan-markle-wedding-portrait2-1526914591.jpg?crop=1xw:1xh;center,top&resize=768:*"
 urls = [cohens_url, simpsons_url , malcolm_url, addams_url, kardashians_url, windsors_url]
 
