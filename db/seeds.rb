@@ -9,6 +9,8 @@ puts "Creating families..."
 
 Family.destroy_all
 User.destroy_all
+Family.destroy_all
+
 user = User.create(first_name: "A", last_name: "Y", email: "a@hotmail.fr", password: "1234")
 families = [
   {

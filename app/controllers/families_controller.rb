@@ -4,9 +4,19 @@ class FamiliesController < ApplicationController
   # skip_after_action :verify_authorized,only: [:new, :show]
 
   def index
-    # price_pppn = ((params[:price]to_i) / params[:night].to_i) / params[:capacity].to_i
-    # families_results = Family.where(price_pppn: =< price_pppn, capacity: params[:capacity])
-    @families = policy_scope(Family).order(created_at: :desc)
+    if params[:family][:night].empty? && params[:family][:price].empty? && params[:family][:capacity].empty?
+      families_results = Family.all
+    elsif params[:family][:night].present? && params[:family][:price].present? && params[:family][:capacity].present?
+      nights = params[:family][:night].to_i
+      price = params[:family][:price].to_i
+      capacity = params[:family][:capacity].to_i
+      price_per_night = price.fdiv(nights)
+      price_per_person = price_per_night.fdiv(capacity)
+      families_results = Family.where("price_pppn <= ? AND capacity >= ?", price_per_person, capacity)
+    else
+      families_results = Family.all
+    end
+    @families = policy_scope(families_results).order(created_at: :desc)
   end
 
   def show
