@@ -43,7 +43,7 @@ class FamiliesController < ApplicationController
     @family.destroy
     redirect_to root_path
   end
-  
+
   def search_form
     @family = Family.new
   end
@@ -56,7 +56,7 @@ class FamiliesController < ApplicationController
   end
 
   def family_params
-    params.require(:family).permit(:name, :description, :capacity, :price_pppn)
+    params.require(:family).permit(:name, :description, :capacity, :price_pppn, :photo)
   end
 
 end
