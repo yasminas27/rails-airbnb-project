@@ -11,7 +11,7 @@ class FamiliesController < ApplicationController
       price = params[:family][:price].to_i
       capacity = params[:family][:capacity].to_i
       price_per_night = price.fdiv(nights)
-      price_per_person = price_per_night.fdiv(params[:family][:capacity].to_i)
+      price_per_person = price_per_night.fdiv(capacity)
       families_results = Family.where("price_pppn <= ? AND capacity >= ?", price_per_person, capacity)
     else
       families_results = Family.all
