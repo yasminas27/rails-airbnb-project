@@ -10,8 +10,10 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to("#", class: "navbar-wagon-item navbar-wagon-link") do %>
-      <i class="fas fa-plus"></i> Add your family
+      <% if policy(Family).new? %>
+        <%= link_to( new_family_path, class: "navbar-wagon-item navbar-wagon-link") do %>
+        <i class="fas fa-plus"></i> Add your family
+        <% end %>
       <% end %>
       <%= link_to "Bookings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
