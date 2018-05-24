@@ -7,6 +7,8 @@
   <p><%= "#{@family.price_pppn}€/day/person" %></p>
 </div>
 
+<%= render 'shared/bookingform' %>
+
 <% if policy(@family).edit? %>
   <%= link_to "Edit", edit_family_path(@family) %>
 <% end %>
