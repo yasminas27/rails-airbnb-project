@@ -7,7 +7,11 @@
       Amazing families are waiting for you
     </div>
   </h2>
-  <p style="font-size:10px"><i>*All of our prices are given per persons & per nights.</i></p>
+  <% if params[:night].present? && params[:capacity].present? %>
+    <p></p>
+  <% else %>
+    <p style="font-size:10px"><i>*All of our prices are given per persons & per nights.</i></p>
+  <% end %>
   <div class="row">
     <% @families.each do |family| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
