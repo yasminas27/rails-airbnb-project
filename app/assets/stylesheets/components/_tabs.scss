@@ -1,8 +1,8 @@
 .tabs {
   background: white;
-  display: flex;
-  // padding: 10px 10px 0 10px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
+
+  margin-bottom: 35px;
 }
 .tabs a {
   color: white;
@@ -17,11 +17,18 @@
   font-weight: bold;
   margin-top: 0;
 }
+ul {
+  display: flex;
+}
 
-.tab {
-  background: $green;
+li {
   flex: 0 0 50%;
   text-align: center;
+}
+.tab {
+  background-color: $green;
+  // flex: 0 0 50%;
+  // text-align: center;
   padding: 15px 0;
 }
 .tab:first-child {
@@ -30,9 +37,17 @@
 .tab:last-child {
   border-radius: 0 10px 0 0;
 }
-.tab.active {
+.active.tab {
   background: white;
   color: black;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #000000;
+  background-color: white;
+  border-bottom-color: white;
+  border: none;
+  cursor: default;
 }
 
 .pad {

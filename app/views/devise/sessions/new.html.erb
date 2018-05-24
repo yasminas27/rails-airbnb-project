@@ -2,7 +2,49 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="tabs">
-        <a class="tab active" href="#">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active tab"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><h3>Sign in</h3></a></li>
+          <li role="presentation" class="tab"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><h3>Sign up</h3></a></li>
+        </ul>
+
+          <!-- Tab panes -->
+        <div class="pad">
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                  <%= f.input :email, required: false, autofocus: true %>
+                  <%= f.input :password, required: false %>
+                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                </div>
+
+                <div class="form-actions">
+                  <%= f.button :submit, "Log in", class:'btn btn-success' %>
+                </div>
+              <% end %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+
+                <div class="form-inputs">
+                  <%= f.input :first_name, required: true, autofocus: true %>
+                  <%= f.input :last_name, required: true, autofocus: true %>
+                  <%= f.input :email, required: true, autofocus: true %>
+                  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                  <%= f.input :password_confirmation, required: true %>
+                </div>
+
+                <div class="form-actions">
+                  <%= f.button :submit, "Sign up", class:'btn btn-success' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!--  <a class="tab active" href="#">
           <h3>Sign in</h3>
         </a>
         <a class="tab" href="#">
@@ -22,7 +64,16 @@
           </div>
         <% end %>
       </div>
-        <%= render "devise/shared/links" %>
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+      <% end -%> -->
+
     </div>
   </div>
 </div>
+
+
+<div>
+
+  <!-- Nav tabs -->
+

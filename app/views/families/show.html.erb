@@ -12,10 +12,10 @@
       <p>For <%= @family.capacity %> <strong class="gras">max</strong></p>
     </div>
     <div class="card-price">
-      <p>Per day: <%= @family.price_pppn %><i class="fas fa-euro-sign"></i>/<i class="fas fa-male"></i></p>
+      <p>Per day: <strong><%= @family.price_pppn.to_i %></strong><i class="fas fa-euro-sign"></i><strong>/</strong><i class="fas fa-male"></i></p>
     </div>
      <div class="card-back">
-        <p>Don't like this family and want to go back?</p>
+        <p>Don't like this family?</p>
         <%= link_to families_path do %>
           <i class="fa fa-undo" aria-hidden="true"></i>
           <span>Back to the list</span>
