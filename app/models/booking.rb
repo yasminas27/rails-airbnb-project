@@ -1,3 +1,4 @@
 class Booking < ApplicationRecord
-  belongs to :user, :family
+  belongs_to :user
+  belongs_to :family
 end
