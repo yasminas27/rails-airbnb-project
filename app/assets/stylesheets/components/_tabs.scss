@@ -1,0 +1,61 @@
+.tabs {
+  background: white;
+  border-radius: 10px;
+
+  margin-bottom: 35px;
+}
+.tabs a {
+  color: white;
+}
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+}
+ul {
+  display: flex;
+}
+
+li {
+  flex: 0 0 50%;
+  text-align: center;
+}
+.tab {
+  background-color: $green;
+  // flex: 0 0 50%;
+  // text-align: center;
+  padding: 15px 0;
+}
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+.active.tab {
+  background: white;
+  color: black;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #000000;
+  background-color: white;
+  border-bottom-color: white;
+  border: none;
+  cursor: default;
+}
+
+.pad {
+  padding: 15px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+}
+
+.form-check-label {
+  padding: 10px;
+}
