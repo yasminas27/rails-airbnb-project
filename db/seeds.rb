@@ -14,7 +14,7 @@ Family.destroy_all
 user = User.create(first_name: "A", last_name: "Y", email: "a@hotmail.fr", password: "1234")
 families = [
   {
-    name: "The Cohens",
+    name: "Cohens",
     description: "We use a red phone like the president of the united states, yes we are that cool.
   I am an ophthalmologist, my husband is a General Praticien, you are safe with us.
   We are happy to welcome you for Shabbat every friday nights I’ll make the best couscous in the world (according to my son Pierre).
@@ -31,7 +31,7 @@ families = [
     price_pppn: 10
   },
   {
-    name: "Malcolm's family",
+    name: "Malcolm",
     description: "We have 2 genius kids and a dumb one. But we are nice. Come and have some fun.",
     capacity: 3,
     price_pppn: 50
@@ -43,7 +43,7 @@ families = [
     price_pppn: 150
   },
   {
-    name: "The Kardashians",
+    name: "Kardashians",
     description: "We are the most fucked up family in the world. Your dinner with us will end up on every social media you may know.
   We love sharing point of views on make up, sex tapes and expensive things.
   Nobody cooks at home, we only eat protein bars.

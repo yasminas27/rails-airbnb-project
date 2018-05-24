@@ -5,12 +5,7 @@
       <span id="banner-typed-text"></span>
     </p>
     <div class="container">
-      <%= form_tag("/families", method: "get", class: 'form-inline') do %>
-        <%= text_field_tag :price, nil, placeholder: '$ Price', class:'input' %>
-        <%= text_field_tag :capacity, nil, placeholder: 'How many people?', class:'input' %>
-        <%= text_field_tag :night, nil, placeholder: 'How many nights?', class:'input' %>
-        <%= submit_tag "Search", class:'btn btn-success' %>
-      <% end %>
+      <%= render 'families/search_form' %>
     </div>
   </div>
 </div>
