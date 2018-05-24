@@ -14,6 +14,9 @@
     <div class="card-price">
       <p>Per day: <strong><%= @family.price_pppn.to_i %></strong><i class="fas fa-euro-sign"></i><strong>/</strong><i class="fas fa-male"></i></p>
     </div>
+    <div class="card-form">
+      <%= render 'shared/bookingform' %>
+    </div>
      <div class="card-back">
         <p>Don't like this family?</p>
         <%= link_to families_path do %>
@@ -21,9 +24,6 @@
           <span>Back to the list</span>
         <% end %>
       </div>
-    <div class="card-form">
-
-    </div>
   </div>
 </div>
   <% if policy(@family).edit? %>
@@ -38,7 +38,7 @@
 
 
 
-<%= render 'shared/bookingform' %>
+
 
 <% if policy(@family).edit? %>
   <%= link_to "Edit", edit_family_path(@family) %>

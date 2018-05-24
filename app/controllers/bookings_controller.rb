@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
     else
       render "families/show"
     end
+  end
 
   def edit
   end
