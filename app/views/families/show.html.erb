@@ -38,3 +38,11 @@
 
 
 
+<%= render 'shared/bookingform' %>
+
+<% if policy(@family).edit? %>
+  <%= link_to "Edit", edit_family_path(@family) %>
+<% end %>
+
+
+
