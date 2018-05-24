@@ -1,17 +1,13 @@
 <div class="container">
   <h2>Find your bookings below</h2>
-  <% @bookings.each do |booking| %>
-    <%= @families.each do |family| %>
-    <div class="card">
-      <div class="card-image">
-        <%= cl_image_tag family.photo, height: 200, width: 250 %>
-        <%= link_to "", family_path(family) %>
-      </div>
-      <div class="card-name">
-        <h3><%= link_to family.name, family_path(family) %></h3>
-      </div>
-    </div>
-    <% end %>
+    <% @bookings.each do |booking| %>
+      <p><%= booking.start_date %> </p>
+      <p><%= booking.family.name %></p>
+      <hr>
+
+      <% price = booking_price(booking) %>
+
+
   <% end %>
 </div>
 
