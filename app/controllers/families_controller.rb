@@ -17,6 +17,7 @@ class FamiliesController < ApplicationController
       families_results = Family.all
     end
     @families = policy_scope(families_results).order(created_at: :asc)
+    @new_class = "form-index "
   end
 
   def show
