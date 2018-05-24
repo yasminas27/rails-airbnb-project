@@ -52,7 +52,9 @@ form {
 
 .list {
   display: flex;
+  align-items: center;
   justify-content: space-around;
+  height: 200px;
 }
 
 .row {
@@ -61,16 +63,21 @@ form {
 }
 
 .left {
-  flex-item: 00 auto;
+  flex-item: 0 0 auto;
   padding: 10px;
+  height: 200px;
 }
 
 .right {
-  flex-item: 00 auto;
+  flex-item: 0 0 auto;
   padding: 10px;
+  height: 200px;
 }
 
 .content {
   text-align: justify;
   padding-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
  }

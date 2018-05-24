@@ -7,6 +7,7 @@
       Amazing families are waiting for you
     </div>
   </h2>
+  <p style="font-size:10px"><i>*All of our prices are given per persons & per nights.</i></p>
   <div class="row">
     <% @families.each do |family| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -22,21 +23,18 @@
           </div>
           <div class="card-description">
             <ul class="list-inline">
-              <li><i class="fas fa-male"></i> Up to <strong><%= "#{family.capacity} guests" %></strong></li>
-              <li> | </li>
+              <li><i class="fas fa-male"></i> Up to <strong><%= family.capacity %> guests</strong></li>
               <% if params[:night].present? && params[:capacity].present? %>
-                <li><i class="fas fa-euro-sign"></i>  Price: <strong><%= family.price_pppn.to_i*params[:night].to_i*params[:capacity].to_i %>€</strong></li>
+                <li>Price: <strong><%= family.price_pppn.to_i*params[:night].to_i*params[:capacity].to_i %><i class="fas fa-euro-sign"></i></strong></li>
               <% else %>
-                <li><i class="fas fa-euro-sign"></i>  Price/night: <strong><%= family.price_pppn.to_i %>€/guest</strong></li>
+                <li>Price: <strong><%= family.price_pppn.to_i %><i class="fas fa-euro-sign"></i></strong></li>
               <% end %>
             </ul>
           </div>
           <div class="check-card-details">
             <%= link_to family_path(family), class: 'card-link text-center' do %>
               <i class="fas fa-angle-double-right"></i>
-            <% end %>
-            <%= link_to family_path(family), class: 'card-link text-center' do %>
-              <p>Check details</p>
+              <span>Check details</span>
             <% end %>
           </div>
         </div>
