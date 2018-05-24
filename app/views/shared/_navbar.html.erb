@@ -1,7 +1,7 @@
 <div class="navbar-wagon <%= 'navbar-wagon-transparent' if params[:action] == 'home' %>">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <i class="fas fa-certificate"></i>
   <% end %>
 
   <!-- Right Navigation -->
@@ -15,7 +15,7 @@
         <i class="fas fa-plus"></i> Add your family
         <% end %>
       <% end %>
-      <%= link_to "Bookings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Bookings", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

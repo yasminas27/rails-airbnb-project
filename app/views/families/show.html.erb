@@ -1,16 +1,48 @@
 
 <div class="container">
-  <h2><%= @family.name %></h2>
-  <%= cl_image_tag @family.photo, height: 400, width: 500  %>
-  <p><%= @family.description %></p>
-  <p><%= "For #{@family.capacity} people max" %></p>
-  <p><%= "#{@family.price_pppn}€/day/person" %></p>
+  <div class="grid">
+    <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @family.photo, crop: :fill %>')" >
+    </div>
+    <div class="card-desc">
+      <h2 class="title"><%= @family.name %></h2>
+      <p><%= @family.description %></p>
+    </div>
+    <div class="card-capacity">
+      <p>For <%= @family.capacity %> <strong class="gras">max</strong></p>
+    </div>
+    <div class="card-price">
+      <p>Per day: <strong><%= @family.price_pppn.to_i %></strong><i class="fas fa-euro-sign"></i><strong>/</strong><i class="fas fa-male"></i></p>
+    </div>
+    <div class="card-form">
+      <%= render 'shared/bookingform' %>
+    </div>
+     <div class="card-back">
+        <p>Don't like this family?</p>
+        <%= link_to families_path do %>
+          <i class="fa fa-undo" aria-hidden="true"></i>
+          <span>Back to the list</span>
+        <% end %>
+      </div>
+  </div>
 </div>
+  <% if policy(@family).edit? %>
+    <%= link_to "Edit", edit_family_path(@family) %>
+  <% end %>
+
+  <% if policy(@family).destroy? %>
+    <%= link_to "Delete", family_path(@family), method: :delete, data: { confirm: "Are you sure you want to delete this family?" } %>
+  <% end %>
+
+
+
+
+
+
 
 <% if policy(@family).edit? %>
   <%= link_to "Edit", edit_family_path(@family) %>
 <% end %>
 
-<% if policy(@family).destroy? %>
-  <%= link_to "Delete", family_path(@family), method: :delete, data: { confirm: "Are you sure you want to delete this family?" } %>
-<% end %>
+
+

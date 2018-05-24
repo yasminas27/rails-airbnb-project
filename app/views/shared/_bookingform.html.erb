@@ -1,0 +1,12 @@
+<!-- <h3 class="text-center">Booking Form</h3> -->
+<div class="form-box">
+  <div class="form-item">
+    <%= simple_form_for [@family, @booking] do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"}  %>
+      <%= f.button :submit, "Book now!", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
+
+
