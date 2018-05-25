@@ -2,10 +2,9 @@
 <div class="form-box">
   <div class="form-item">
     <%= simple_form_for [@family, @booking] do |f| %>
-      <%= f.input :price %>
       <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"}  %>
-      <%= f.input :capacity, input_html: { value: params[:capacity] } %>
+      <%= f.input :capacity, label: "Number of guests", input_html: { value: params[:capacity] } %>
       <%= f.input :price, input_html: { data: { price_pppn: params[:price_pppn] }} %>
 
       <%= f.button :submit, "Book now!", class: "btn btn-success" %>
