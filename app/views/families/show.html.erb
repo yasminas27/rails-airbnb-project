@@ -1,7 +1,7 @@
 <div class="container">
   <div class="grid">
     <div class="grid-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path @family.photo, crop: :fill %>')" >
+         url('<%= cl_image_path @family.photo, fetch_format: :auto, crop: :scale; %>')" >
     </div>
     <div class="grid-desc">
       <div class="desc-child">
