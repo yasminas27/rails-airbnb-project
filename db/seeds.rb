@@ -7,11 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Creating families..."
 
+Booking.destroy_all
 Family.destroy_all
 User.destroy_all
-Family.destroy_all
 
-user = User.create(first_name: "A", last_name: "Y", email: "a@hotmail.fr", password: "1234")
+
+user = User.create(first_name: "Alicia", last_name: "Yahiaoui", email: "a@hotmail.fr", password: "1234")
 families = [
   {
     name: "Cohens",

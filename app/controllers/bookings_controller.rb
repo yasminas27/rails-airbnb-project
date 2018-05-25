@@ -17,10 +17,11 @@ class BookingsController < ApplicationController
   def create
     @family = Family.find(params[:family_id])
     @booking = Booking.new(booking_params)
+    @booking.start_date = DateTime.parse(@booking.start_date.split(' to ').first).strftime('%B %d, %Y')
     @booking.user = current_user
     @booking.family = @family
     if @booking.save
-      redirect_to family_booking_path(@family, @booking)
+      redirect_to profile_path
     else
       render "families/show"
     end
@@ -36,7 +37,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to root_path
+    redirect_to profile_path
   end
 
   private
