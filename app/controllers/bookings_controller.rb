@@ -17,6 +17,8 @@ class BookingsController < ApplicationController
   def create
     @family = Family.find(params[:family_id])
     @booking = Booking.new(booking_params)
+    @booking.price = params[:booking][:price].to_f
+    @booking.number_guests = params[:booking][:capacity].to_i
     @booking.start_date = DateTime.parse(@booking.start_date.split(' to ').first).strftime('%B %d, %Y')
     @booking.user = current_user
     @booking.family = @family
