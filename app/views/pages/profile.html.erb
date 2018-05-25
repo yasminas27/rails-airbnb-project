@@ -4,32 +4,55 @@
       Hello, <%= current_user.first_name %> <%= current_user.last_name %>
     </div>
   </h2>
-   <div class="row">
-  <h3>Find your bookings below</h3>
-    <% @bookings.each do |booking| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card">
-          <div class="card-image">
-              <%= cl_image_tag booking.family.photo, height: 250, width: 350, crop: :fill, gravity: :north %>
-           </div>
-           <div class="card-name">
-            <h3><%= booking.family.name %></h3>
-          </div>
-          <div class="card-description">
-            <ul class="list-inline">
-              <li><i class="fas fa-male"></i> <strong><%= booking.number_guests%> guests</strong></li>
-              <li>Price: <strong><%= booking.family.price_pppn.to_i* params[:night].to_i*params[:capacity].to_i %><i class="fas fa-euro-sign"></i></strong></li>
-              <li> <em> From </em> <%= booking.start_date %> <em>to</em> <%= booking.end_date%>
-              </li>
-            </ul>
-          </div>
-          <div class="check-card-details">
-              <i class="far fa-check-circle"></i>
-              <span>Confirmed</span>
-          </div>
+  <div id="booking-tabs" class="tabs" >
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active tab"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><h3>Your bookings</h3></a></li>
+          <li role="presentation" class="tab"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><h3>Your families</h3></a></li>
+        </ul>
+  </div>
+
+  <div id="booking-pad" class="pad">
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="home">
+        <div class="row">
+          <h3>Find your bookings below</h3>
+          <% @bookings.each do |booking| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="card">
+                <div class="card-image">
+                  <%= cl_image_tag booking.family.photo, height: 250, width: 350, crop: :fill, gravity: :north %>
+                </div>
+                <div class="card-name">
+                <h3><%= booking.family.name %></h3>
+                </div>
+                <div class="card-description">
+                  <ul class="list-inline">
+                    <li><i class="fas fa-male"></i> <strong><%= booking.number_guests %> guests</strong>
+                    </li>
+                    <li>Price: <strong><%= booking.family.price_pppn.to_i* params[:night].to_i*params[:capacity].to_i %><i class="fas fa-euro-sign"></i></strong>
+                    </li>
+                    <li> <em> From </em> <%= booking.start_date %> <em>to</em> <%= booking.end_date%>
+                    </li>
+                  </ul>
+                </div>
+                <div class="check-card-details">
+                  <i class="far fa-check-circle"></i>
+                  <span>Confirmed</span>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
-    <% end %>
+      <div role="tabpanel" class="tab-pane" id="profile">
+        <div class="row">
+          <h3>Find your families below</h3>
+            <%  current_user.families.each do |family|  %>
+            <%= family.name %>
+            <% end %>
+
+        </div>
+      </div>
   </div>
 </div>
 
