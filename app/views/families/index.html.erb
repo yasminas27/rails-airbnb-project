@@ -1,24 +1,48 @@
-<div class="container">
-  <h2>Choose your ideal family from the list below</h2>
-  <% @families.each do |family| %>
-    <div class="card">
-      <div class="card-image">
-        <%= cl_image_tag family.photo, height: 200, width: 250 %>
-        <%= link_to "", family_path(family) %>
-      </div>
-      <div class="card-name">
-        <h3><%= family.name %></h3>
-          <p><%= link_to "find out more", family_path(family), class: 'card-link' %></p>
-      </div>
-      <div class="card-description">
-        <p> Up to <strong><%= "#{family.capacity} guests" %></strong></p>
-        <p>Price per day: <strong><%= "#{family.price_pppn}€ per guest"%></strong></p>
-      </div>
-    </div>
-  <% end %>
+<div id="form-top-page">
+  <div id="form-div"><%= render 'search_form' %></div>
 </div>
+<div class="container">
+  <h2 class="section-title-home">
+    <div class="section-title-home-content" style="font-size:30px;">
+      Amazing families are waiting for you
+    </div>
+  </h2>
+  <% if params[:night].present? && params[:capacity].present? %>
+    <p></p>
+  <% else %>
+    <p style="font-size:10px"><i>*All of our prices are given per person & per night
+  <% end %>
+  <div class="row">
+    <% @families.each do |family| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+          <div class="card-image">
+            <%= link_to family_path(family) do %>
+              <%= cl_image_tag family.photo, height: 250, width: 350, crop: :fill, gravity: :north %>
+            <% end %>
+          </div>
 
-<% if policy(Family).new? %>
-  <%= link_to "Create a family", new_family_path %>
-<% end %>
-
+          <div class="card-name">
+            <h3><%= family.name %></h3>
+          </div>
+          <div class="card-description">
+            <ul class="list-inline">
+              <li><i class="fas fa-male"></i> Up to <strong><%= family.capacity %> guests</strong></li>
+              <% if params[:night].present? && params[:capacity].present? %>
+                <li>Price: <strong><%= family.price_pppn.to_i*params[:night].to_i*params[:capacity].to_i %><i class="fas fa-euro-sign"></i></strong></li>
+              <% else %>
+                <li>Price: <strong><%= family.price_pppn.to_i %><i class="fas fa-euro-sign"></i></strong></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="check-card-details">
+            <%= link_to family_path(family), class: 'card-link text-center' do %>
+              <i class="fas fa-angle-double-right"></i>
+              <span>Check details</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

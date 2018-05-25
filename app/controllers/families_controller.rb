@@ -4,7 +4,7 @@ class FamiliesController < ApplicationController
   # skip_after_action :verify_authorized,only: [:new, :show]
 
   def index
-    if params[:night].empty? && params[:price].empty? && params[:capacity].empty?
+    if params[:night].nil? && params[:price].nil? && params[:capacity].nil?
       families_results = Family.all
     elsif params[:night].present? && params[:price].present? && params[:capacity].present?
       nights = params[:night].to_i
@@ -17,6 +17,7 @@ class FamiliesController < ApplicationController
       families_results = Family.all
     end
     @families = policy_scope(families_results).order(created_at: :asc)
+    @new_class = "form-index "
   end
 
   def show

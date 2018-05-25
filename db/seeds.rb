@@ -14,7 +14,7 @@ Family.destroy_all
 user = User.create(first_name: "A", last_name: "Y", email: "a@hotmail.fr", password: "1234")
 families = [
   {
-    name: "The Cohens",
+    name: "Cohens",
     description: "We use a red phone like the president of the united states, yes we are that cool.
   I am an ophthalmologist, my husband is a General Praticien, you are safe with us.
   We are happy to welcome you for Shabbat every friday nights I’ll make the best couscous in the world (according to my son Pierre).
@@ -31,7 +31,7 @@ families = [
     price_pppn: 10
   },
   {
-    name: "Malcolm's family",
+    name: "Malcolm",
     description: "We have 2 genius kids and a dumb one. But we are nice. Come and have some fun.",
     capacity: 3,
     price_pppn: 50
@@ -43,7 +43,7 @@ families = [
     price_pppn: 150
   },
   {
-    name: "The Kardashians",
+    name: "Kardashians",
     description: "We are the most fucked up family in the world. Your dinner with us will end up on every social media you may know.
   We love sharing point of views on make up, sex tapes and expensive things.
   Nobody cooks at home, we only eat protein bars.
@@ -61,10 +61,10 @@ families = [
   }
   ]
 
-cohens_url = "http://imagizer.imageshack.us/a/img922/4376/FQClhc.jpg"
-simpsons_url = "https://img00.deviantart.net/68c1/i/2010/269/c/2/full_simpson_family_by_tomsimpson96-d2zi35b.jpg"
-malcolm_url = "https://consequenceofsound.files.wordpress.com/2016/12/screen-shot-2016-12-18-at-4-16-07-pm.png"
-addams_url = "http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/addams-family-poster.jpeg?itok=sokBQWAf&resize=1100x619"
+cohens_url = "https://imageshack.com/a/img921/5817/XRjOX7.jpg"
+simpsons_url = "https://imageshack.com/a/img921/4667/PS7xX2.jpg"
+malcolm_url = "https://images.wallpaperscraft.com/image/malcolm_in_the_middle_malcolm_hal_lois_francis_reese_dewey_97064_1600x1200.jpg"
+addams_url = "https://imageshack.com/a/img922/9825/MLp9UK.png"
 kardashians_url = "https://akns-images.eonline.com/eol_images/Entire_Site/2017815/rs_1024x575-170915114530-back4.jpg?fit=inside|900:auto&output-quality=90"
 windsors_url = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hbz-prince-harry-meghan-markle-wedding-portrait2-1526914591.jpg?crop=1xw:1xh;center,top&resize=768:*"
 urls = [cohens_url, simpsons_url , malcolm_url, addams_url, kardashians_url, windsors_url]

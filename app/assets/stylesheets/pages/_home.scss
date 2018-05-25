@@ -2,8 +2,9 @@
 .input {
   font-size: 20px;
   border-radius: 5px;
-  color: #1d6168;
+  color: $green;
   padding: 4px;
+  border-color: $green;
 }
 
 form {
@@ -51,7 +52,9 @@ form {
 
 .list {
   display: flex;
+  align-items: center;
   justify-content: space-around;
+  height: 200px;
 }
 
 .row {
@@ -59,36 +62,18 @@ form {
   padding-top: 35px;
 }
 
-.left {
-  flex-item: 00 auto;
+.icon-left {
   padding: 10px;
 }
 
-.right {
-  flex-item: 00 auto;
+.icon-right {
   padding: 10px;
 }
 
 .content {
   text-align: justify;
   padding-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
  }
-
-.fa-tree {
-  color: #B4DC7F;
-}
-.fa-plane {
-  color: $blue;
-}
-
-.fa-gift {
-  color: $orange;
-}
-
-.fa-wine-glass {
-  color: $red;
-}
-
-.fas {
-  padding: 10px;
-}
