@@ -29,7 +29,7 @@
                   <ul class="list-inline">
                     <li><i class="fas fa-male"></i> <strong><%= booking.number_guests %> guests</strong>
                     </li>
-                    <li>Price: <strong><%= booking.family.price_pppn.to_i* params[:night].to_i*params[:capacity].to_i %><i class="fas fa-euro-sign"></i></strong>
+                    <li>Price: <strong><%= booking.price.to_i %><i class="fas fa-euro-sign"></i></strong>
                     </li>
                     <li><strong>From</strong> <em> <%= booking.start_date %></em> <strong>to</strong> <em><%= booking.end_date%></em>
                     </li>

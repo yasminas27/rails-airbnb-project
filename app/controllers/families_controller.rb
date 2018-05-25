@@ -19,7 +19,10 @@ class FamiliesController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    start_date = Date.today + 1
+    end_date = start_date + params[:night].to_i
+    price = params[:price_pppn].to_i*params[:capacity].to_i*params[:night].to_i
+    @booking = Booking.new(start_date: start_date, end_date: end_date, number_guests: params[:capacity], price: price)
   end
 
   def new
