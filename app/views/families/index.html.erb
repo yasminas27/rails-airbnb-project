@@ -36,9 +36,14 @@
             </ul>
           </div>
           <div class="check-card-details">
-            <%= link_to family_path(family), class: 'card-link text-center' do %>
-              <i class="fas fa-angle-double-right"></i>
-              <span>Check details</span>
+            <%= form_tag family_path(family), method: :get, class: "form-inline #{@new_class}text-center" do %>
+              <%= hidden_field_tag :price_pppn, family.price_pppn.to_i %>
+              <%= hidden_field_tag :capacity, params[:capacity] %>
+              <%= hidden_field_tag :night, params[:night] %>
+              <%= button_tag class:'card-link text-center', type: "submit" do %>
+                <i class="fas fa-angle-double-right"></i>
+                <span>Check details</span>
+              <% end %>
             <% end %>
           </div>
         </div>

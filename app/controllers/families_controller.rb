@@ -4,9 +4,7 @@ class FamiliesController < ApplicationController
   # skip_after_action :verify_authorized,only: [:new, :show]
 
   def index
-    if params[:night].nil? && params[:price].nil? && params[:capacity].nil?
-      families_results = Family.all
-    elsif params[:night].present? && params[:price].present? && params[:capacity].present?
+    if params[:night].present? && params[:price].present? && params[:capacity].present?
       nights = params[:night].to_i
       price = params[:price].to_i
       capacity = params[:capacity].to_i
@@ -55,7 +53,6 @@ class FamiliesController < ApplicationController
     @family.destroy
     redirect_to root_path
   end
-
 
   private
 
