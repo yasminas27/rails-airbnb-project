@@ -7,6 +7,12 @@
       <div class="desc-child">
         <h2 class="title"><%= @family.name %></h2>
         <p><%= @family.description %></p>
+        <div class="back">
+          <%= link_to families_path do %>
+            <i class="fa fa-undo" aria-hidden="true"></i>
+            <span>Back to the list</span>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="grid-capacity">
@@ -18,15 +24,6 @@
     <div class="grid-form">
       <div class="form-child">
         <%= render 'shared/bookingform' %>
-      </div>
-    </div>
-    <div class="grid-back">
-      <div class="back-child">
-        <p>Don't like this family?</p>
-        <%= link_to families_path do %>
-          <i class="fa fa-undo" aria-hidden="true"></i>
-          <span>Back to the list</span>
-        <% end %>
       </div>
     </div>
   </div>

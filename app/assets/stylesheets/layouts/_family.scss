@@ -53,7 +53,7 @@
 }
 
 .grid-form {
-  grid-row: 2 / span 2;
+  grid-row: 2 / span 3;
   grid-column: 4 / span 2;
   margin: 10px;
   background-color: white;
@@ -63,20 +63,28 @@
   justify-content: space-around;
 }
 
-.grid-back {
-  grid-row: 4 / span 1;
-  grid-column: 4 / span 2;
-  margin: 10px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  text-align: center;
-  padding: 30px;
+.back {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-around;
 }
 
-.grid-back a {
+
+.back a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    font-weight: 700;
+  }
+}
+
+.back-home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.back-home a {
   color: black;
   &:hover {
     text-decoration: none;
@@ -104,8 +112,3 @@
   padding: 25px;
 }
 
-// label {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-around;
-// }
