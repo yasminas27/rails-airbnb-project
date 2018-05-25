@@ -1,1 +1,4 @@
-<h1> <%= current_user.last_name %></h1>
+<h1> <%= current_user.last_name current_user.first_name %></h1>
+
+<%= bookings.each do |booking| %>
+<%=
